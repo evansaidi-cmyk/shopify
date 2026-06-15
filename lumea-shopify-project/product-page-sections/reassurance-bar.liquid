@@ -1,0 +1,108 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — Barre de réassurance ("Réassurance")
+  =====================================================================
+  À coller dans un bloc "Custom Liquid" sur la fiche produit.
+  4 arguments de confiance avec icônes SVG inline.
+  CSS scopé (.lumea-rb-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • item_1..4 : texte de chaque argument (icône fixe via SVG ci-dessous)
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign item_1 = "Livraison offerte dès 50€"
+  assign item_2 = "Paiement sécurisé"
+  assign item_3 = "Satisfait ou remboursé 30 jours"
+  assign item_4 = "Fabriqué en France"
+-%}
+
+<section class="lumea-rb" aria-label="Garanties LUMÉA">
+  <ul class="lumea-rb__list">
+    <li class="lumea-rb__item">
+      <span class="lumea-rb__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7zM5.5 19a2 2 0 100-4 2 2 0 000 4zM18.5 19a2 2 0 100-4 2 2 0 000 4z"/></svg>
+      </span>
+      <span class="lumea-rb__label">{{ item_1 }}</span>
+    </li>
+    <li class="lumea-rb__item">
+      <span class="lumea-rb__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      </span>
+      <span class="lumea-rb__label">{{ item_2 }}</span>
+    </li>
+    <li class="lumea-rb__item">
+      <span class="lumea-rb__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5"/><path d="M9 12l2 2 4-4"/></svg>
+      </span>
+      <span class="lumea-rb__label">{{ item_3 }}</span>
+    </li>
+    <li class="lumea-rb__item">
+      <span class="lumea-rb__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>
+      </span>
+      <span class="lumea-rb__label">{{ item_4 }}</span>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .lumea-rb {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    border-radius: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 12px;
+    box-sizing: border-box;
+  }
+  .lumea-rb *, .lumea-rb *::before, .lumea-rb *::after { box-sizing: border-box; }
+
+  .lumea-rb__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 8px;
+  }
+  .lumea-rb__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+  .lumea-rb__icon {
+    width: 40px; height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--lumea-rose);
+  }
+  .lumea-rb__icon svg { width: 22px; height: 22px; }
+  .lumea-rb__label {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    font-weight: 500;
+    max-width: 14ch;
+  }
+
+  @media (min-width: 720px) {
+    .lumea-rb { padding: 20px; }
+    .lumea-rb__list { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .lumea-rb__item { flex-direction: row; text-align: left; }
+    .lumea-rb__label { font-size: 0.85rem; max-width: none; }
+  }
+</style>

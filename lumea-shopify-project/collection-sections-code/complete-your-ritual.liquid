@@ -1,0 +1,227 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — "Complète ton rituel" (carrousel cross-sell horizontal)
+  =====================================================================
+  À coller dans un bloc "Custom Liquid" (page Collection ou Produit).
+  Carrousel défilant en scroll-snap (idéal mobile) + flèches sur desktop.
+  CSS scopé (.lumea-cr-*) + JS inline autonome.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • section_title : titre de la section
+  • Pour chaque carte product_X :
+      _img   : URL image produit
+      _name  : nom du produit
+      _tag   : étiquette (ex. Rituels / Accessoires)
+      _price : prix affiché
+      _url   : lien vers la fiche produit / collection
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign section_title = "Complète ton rituel"
+
+  assign p1_img   = "https://images.unsplash.com/photo-1610632380989-680fe40816c6?auto=format&fit=crop&w=600&q=80"
+  assign p1_name  = "Café Noir Collagène"
+  assign p1_tag   = "Rituels"
+  assign p1_price = "29,90 €"
+  assign p1_url   = "/collections/rituels"
+
+  assign p2_img   = "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80"
+  assign p2_name  = "Matcha Original Collagène"
+  assign p2_tag   = "Rituels"
+  assign p2_price = "32,90 €"
+  assign p2_url   = "/collections/rituels"
+
+  assign p3_img   = "https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=600&q=80"
+  assign p3_name  = "Mug LUMÉA"
+  assign p3_tag   = "Accessoires"
+  assign p3_price = "19,90 €"
+  assign p3_url   = "/collections/accessoires"
+
+  assign p4_img   = "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80"
+  assign p4_name  = "Fouet à mousse"
+  assign p4_tag   = "Accessoires"
+  assign p4_price = "14,90 €"
+  assign p4_url   = "/collections/accessoires"
+-%}
+
+<section class="lumea-cr">
+  <div class="lumea-cr__head">
+    <h2 class="lumea-cr__title">{{ section_title }}</h2>
+    <div class="lumea-cr__nav" aria-hidden="true">
+      <button class="lumea-cr__arrow" data-dir="prev" type="button" aria-label="Précédent">‹</button>
+      <button class="lumea-cr__arrow" data-dir="next" type="button" aria-label="Suivant">›</button>
+    </div>
+  </div>
+
+  <div class="lumea-cr__track">
+    <!-- Carte 1 -->
+    <a class="lumea-cr__card" href="{{ p1_url }}">
+      <div class="lumea-cr__media"><img src="{{ p1_img }}" alt="{{ p1_name }}" loading="lazy"></div>
+      <span class="lumea-cr__tag">{{ p1_tag }}</span>
+      <h3 class="lumea-cr__name">{{ p1_name }}</h3>
+      <p class="lumea-cr__price">{{ p1_price }}</p>
+      <span class="lumea-cr__cta">Ajouter au rituel</span>
+    </a>
+    <!-- Carte 2 -->
+    <a class="lumea-cr__card" href="{{ p2_url }}">
+      <div class="lumea-cr__media"><img src="{{ p2_img }}" alt="{{ p2_name }}" loading="lazy"></div>
+      <span class="lumea-cr__tag">{{ p2_tag }}</span>
+      <h3 class="lumea-cr__name">{{ p2_name }}</h3>
+      <p class="lumea-cr__price">{{ p2_price }}</p>
+      <span class="lumea-cr__cta">Ajouter au rituel</span>
+    </a>
+    <!-- Carte 3 -->
+    <a class="lumea-cr__card" href="{{ p3_url }}">
+      <div class="lumea-cr__media"><img src="{{ p3_img }}" alt="{{ p3_name }}" loading="lazy"></div>
+      <span class="lumea-cr__tag">{{ p3_tag }}</span>
+      <h3 class="lumea-cr__name">{{ p3_name }}</h3>
+      <p class="lumea-cr__price">{{ p3_price }}</p>
+      <span class="lumea-cr__cta">Ajouter au rituel</span>
+    </a>
+    <!-- Carte 4 -->
+    <a class="lumea-cr__card" href="{{ p4_url }}">
+      <div class="lumea-cr__media"><img src="{{ p4_img }}" alt="{{ p4_name }}" loading="lazy"></div>
+      <span class="lumea-cr__tag">{{ p4_tag }}</span>
+      <h3 class="lumea-cr__name">{{ p4_name }}</h3>
+      <p class="lumea-cr__price">{{ p4_price }}</p>
+      <span class="lumea-cr__cta">Ajouter au rituel</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .lumea-cr {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 0;
+    box-sizing: border-box;
+  }
+  .lumea-cr *, .lumea-cr *::before, .lumea-cr *::after { box-sizing: border-box; }
+
+  .lumea-cr__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+  .lumea-cr__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4.5vw, 2rem);
+    margin: 0;
+  }
+  .lumea-cr__nav { display: none; gap: 8px; }
+  .lumea-cr__arrow {
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(43,39,34,0.18);
+    background: #fff;
+    color: var(--lumea-anthracite);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+  }
+  .lumea-cr__arrow:hover { background: var(--lumea-rose); color: #fff; border-color: var(--lumea-rose); }
+
+  /* ===== Piste défilante avec scroll-snap ===== */
+  .lumea-cr__track {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 16px 16px;
+    scrollbar-width: none;
+  }
+  .lumea-cr__track::-webkit-scrollbar { display: none; }
+
+  .lumea-cr__card {
+    scroll-snap-align: start;
+    flex: 0 0 72%;
+    max-width: 260px;
+    background: #fff;
+    border: 1px solid rgba(140,155,123,0.22);
+    border-radius: 20px;
+    padding: 12px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .lumea-cr__card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(43,39,34,0.08); }
+  .lumea-cr__media {
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--lumea-creme);
+    margin-bottom: 12px;
+  }
+  .lumea-cr__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lumea-cr__tag {
+    align-self: flex-start;
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--lumea-sauge);
+    background: rgba(140,155,123,0.12);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .lumea-cr__name {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .lumea-cr__price { font-size: 0.95rem; margin: 0 0 12px; color: rgba(43,39,34,0.8); }
+  .lumea-cr__cta {
+    margin-top: auto;
+    text-align: center;
+    background: var(--lumea-anthracite);
+    color: var(--lumea-creme);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: background .2s;
+  }
+  .lumea-cr__card:hover .lumea-cr__cta { background: var(--lumea-rose); }
+
+  @media (min-width: 720px) {
+    .lumea-cr__nav { display: flex; }
+    .lumea-cr__card { flex-basis: 30%; }
+  }
+</style>
+
+<script>
+  (function () {
+    var sections = document.querySelectorAll('.lumea-cr');
+    sections.forEach(function (section) {
+      var track = section.querySelector('.lumea-cr__track');
+      var arrows = section.querySelectorAll('.lumea-cr__arrow');
+      arrows.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var card = track.querySelector('.lumea-cr__card');
+          var step = card ? card.offsetWidth + 14 : 280;
+          track.scrollBy({ left: btn.dataset.dir === 'next' ? step : -step, behavior: 'smooth' });
+        });
+      });
+    });
+  })();
+</script>

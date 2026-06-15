@@ -1,0 +1,137 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — "Comment préparer ton rituel" (3 étapes illustrées)
+  =====================================================================
+  À coller dans un bloc "Custom Liquid" sur la fiche produit.
+  CSS scopé (.lumea-ht-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • section_title          : titre de la section
+  • step_X_img             : URL illustration de l'étape
+  • step_X_title / _text   : titre + description de l'étape
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign section_title = "Comment préparer ton rituel"
+
+  assign step_1_img   = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+  assign step_1_title = "Verser une dose"
+  assign step_1_text  = "Versez une dose dans 200 ml d'eau chaude ou de lait."
+
+  assign step_2_img   = "https://images.unsplash.com/photo-1572286258217-215cf8e667ad?auto=format&fit=crop&w=600&q=80"
+  assign step_2_title = "Mélanger"
+  assign step_2_text  = "Mélangez ou faites mousser jusqu'à obtenir une texture onctueuse."
+
+  assign step_3_img   = "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80"
+  assign step_3_title = "Savourer"
+  assign step_3_text  = "Savourez votre rituel, chaud ou glacé, à tout moment de la journée."
+-%}
+
+<section class="lumea-ht">
+  <h2 class="lumea-ht__title">{{ section_title }}</h2>
+
+  <ol class="lumea-ht__steps">
+    <li class="lumea-ht__step">
+      <div class="lumea-ht__media">
+        <img src="{{ step_1_img }}" alt="{{ step_1_title }}" loading="lazy">
+        <span class="lumea-ht__num">1</span>
+      </div>
+      <h3 class="lumea-ht__step-title">{{ step_1_title }}</h3>
+      <p class="lumea-ht__step-text">{{ step_1_text }}</p>
+    </li>
+    <li class="lumea-ht__step">
+      <div class="lumea-ht__media">
+        <img src="{{ step_2_img }}" alt="{{ step_2_title }}" loading="lazy">
+        <span class="lumea-ht__num">2</span>
+      </div>
+      <h3 class="lumea-ht__step-title">{{ step_2_title }}</h3>
+      <p class="lumea-ht__step-text">{{ step_2_text }}</p>
+    </li>
+    <li class="lumea-ht__step">
+      <div class="lumea-ht__media">
+        <img src="{{ step_3_img }}" alt="{{ step_3_title }}" loading="lazy">
+        <span class="lumea-ht__num">3</span>
+      </div>
+      <h3 class="lumea-ht__step-title">{{ step_3_title }}</h3>
+      <p class="lumea-ht__step-text">{{ step_3_text }}</p>
+    </li>
+  </ol>
+</section>
+
+<style>
+  .lumea-ht {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    box-sizing: border-box;
+  }
+  .lumea-ht *, .lumea-ht *::before, .lumea-ht *::after { box-sizing: border-box; }
+
+  .lumea-ht__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4.5vw, 2rem);
+    text-align: center;
+    margin: 0 0 26px;
+  }
+  .lumea-ht__steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .lumea-ht__step { text-align: center; }
+  .lumea-ht__media {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #fff;
+    margin-bottom: 14px;
+  }
+  .lumea-ht__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lumea-ht__num {
+    position: absolute;
+    top: 12px; left: 12px;
+    width: 36px; height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: var(--lumea-rose);
+    color: #fff;
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  .lumea-ht__step-title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .lumea-ht__step-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 0 auto;
+    max-width: 30ch;
+    color: rgba(43,39,34,0.8);
+  }
+
+  @media (min-width: 720px) {
+    .lumea-ht__steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  }
+</style>

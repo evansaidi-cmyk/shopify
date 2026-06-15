@@ -1,0 +1,176 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — Bannière de catégorie ("Bannière de catégorie")
+  =====================================================================
+  À coller dans un bloc "Custom Liquid" sur une page Collection.
+  Section autonome : CSS scopé (.lumea-cb-*) + JS inline.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER (modifie directement ci-dessous)
+  -------------------------------------------------------------------
+  • banner_image     : URL de l'image de fond (visuel produit/lifestyle)
+  • banner_eyebrow   : petit sur-titre au-dessus du titre
+  • banner_title     : titre principal de la catégorie
+  • banner_intro     : texte d'introduction de la catégorie
+  • benefit_1/2/3    : 3 bénéfices clés (icône + titre + texte)
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign banner_image   = "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1600&q=80"
+  assign banner_eyebrow = "Collection signature"
+  assign banner_title   = "Le café collagène"
+  assign banner_intro   = "Un rituel quotidien qui allie le plaisir d'un café d'exception aux bienfaits du collagène marin. Sélectionné avec soin, pensé pour votre éclat de l'intérieur."
+
+  assign benefit_1_icon  = "✦"
+  assign benefit_1_title = "Collagène marin pur"
+  assign benefit_1_text  = "10 g de peptides hautement assimilables par dose."
+
+  assign benefit_2_icon  = "❋"
+  assign benefit_2_title = "Sans sucre ajouté"
+  assign benefit_2_text  = "Une formule clean, gourmande et équilibrée."
+
+  assign benefit_3_icon  = "✿"
+  assign benefit_3_title = "Fabriqué en France"
+  assign benefit_3_text  = "Production locale et ingrédients tracés."
+-%}
+
+<section class="lumea-cb">
+  <div class="lumea-cb__visual" style="background-image:url('{{ banner_image }}');">
+    <div class="lumea-cb__overlay">
+      <p class="lumea-cb__eyebrow">{{ banner_eyebrow }}</p>
+      <h1 class="lumea-cb__title">{{ banner_title }}</h1>
+      <p class="lumea-cb__intro">{{ banner_intro }}</p>
+    </div>
+  </div>
+
+  <ul class="lumea-cb__benefits">
+    <li class="lumea-cb__benefit">
+      <span class="lumea-cb__icon" aria-hidden="true">{{ benefit_1_icon }}</span>
+      <h3 class="lumea-cb__benefit-title">{{ benefit_1_title }}</h3>
+      <p class="lumea-cb__benefit-text">{{ benefit_1_text }}</p>
+    </li>
+    <li class="lumea-cb__benefit">
+      <span class="lumea-cb__icon" aria-hidden="true">{{ benefit_2_icon }}</span>
+      <h3 class="lumea-cb__benefit-title">{{ benefit_2_title }}</h3>
+      <p class="lumea-cb__benefit-text">{{ benefit_2_text }}</p>
+    </li>
+    <li class="lumea-cb__benefit">
+      <span class="lumea-cb__icon" aria-hidden="true">{{ benefit_3_icon }}</span>
+      <h3 class="lumea-cb__benefit-title">{{ benefit_3_title }}</h3>
+      <p class="lumea-cb__benefit-text">{{ benefit_3_text }}</p>
+    </li>
+  </ul>
+</section>
+
+<style>
+  /* ===== Palette & typo LUMÉA (scopées à la section) ===== */
+  .lumea-cb {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+    --lumea-radius: 999px;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px 8px;
+    box-sizing: border-box;
+  }
+  .lumea-cb *, .lumea-cb *::before, .lumea-cb *::after { box-sizing: border-box; }
+
+  /* ===== Visuel + overlay texte ===== */
+  .lumea-cb__visual {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .lumea-cb__overlay {
+    width: 100%;
+    padding: 28px 22px;
+    background: linear-gradient(180deg, rgba(43,39,34,0) 0%, rgba(43,39,34,0.65) 100%);
+    color: var(--lumea-creme);
+  }
+  .lumea-cb__eyebrow {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    margin: 0 0 8px;
+    opacity: 0.92;
+  }
+  .lumea-cb__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    line-height: 1.1;
+    margin: 0 0 10px;
+  }
+  .lumea-cb__intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0;
+    opacity: 0.96;
+  }
+
+  /* ===== Bénéfices clés ===== */
+  .lumea-cb__benefits {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .lumea-cb__benefit {
+    background: #fff;
+    border: 1px solid rgba(140,155,123,0.25);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .lumea-cb__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--lumea-radius);
+    background: var(--lumea-creme);
+    color: var(--lumea-rose);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .lumea-cb__benefit-title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .lumea-cb__benefit-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+    color: rgba(43,39,34,0.78);
+  }
+
+  /* ===== Tablette / Desktop ===== */
+  @media (min-width: 720px) {
+    .lumea-cb__visual { min-height: 440px; }
+    .lumea-cb__overlay { padding: 40px 44px; }
+    .lumea-cb__benefits {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+  }
+</style>
