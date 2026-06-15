@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Noir Collagène — LUMÉA</title>
+  <meta name="description" content="Café Noir Collagène — intense, soyeux, 10 g de collagène par tasse." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="announce" data-announce>Code <strong>NOUVEAUSITE</strong> — -20% sur votre première commande</div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">LUMÉA</a>
+      <nav class="nav">
+        <a href="collection.html">Cafés Collagène</a>
+        <a href="collection.html">Matcha Collagène</a>
+        <a href="collection.html">Rituels &amp; Compléments</a>
+        <a href="collection.html">Accessoires</a>
+        <a href="about.html">Qui sommes-nous</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn cart" aria-label="Panier">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart__count" data-cart-count>0</span>
+        </button>
+        <button class="icon-btn burger" data-burger aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__top">
+      <span class="logo">LUMÉA</span>
+      <button class="icon-btn" data-menu-close aria-label="Fermer">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav>
+      <a href="collection.html">Cafés Collagène</a>
+      <a href="collection.html">Matcha Collagène</a>
+      <a href="collection.html">Rituels &amp; Compléments</a>
+      <a href="collection.html">Accessoires</a>
+      <a href="about.html">Qui sommes-nous</a>
+    </nav>
+    <a href="collection.html" class="btn btn--primary btn--block">Découvrir nos rituels</a>
+  </div>
+
+  <!-- PDP -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="pdp">
+        <!-- Gallery -->
+        <div class="gallery">
+          <div class="gallery__main" data-gallery-main>
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Café Noir Collagène" />
+          </div>
+          <div class="gallery__thumbs">
+            <div class="thumb active" data-thumb data-src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300" alt="" /></div>
+            <div class="thumb" data-thumb data-src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300" alt="" /></div>
+            <div class="thumb" data-thumb data-src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300" alt="" /></div>
+            <div class="thumb" data-thumb data-src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300" alt="" /></div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="pdp__info">
+          <div class="pdp__rating"><span class="stars" style="color:#E8B84B">★★★★★</span> 4,9 · 312 avis</div>
+          <h1>Café Noir Collagène</h1>
+          <p class="muted">Un arabica intense et soyeux, enrichi de 10 g de collagène marin par tasse.</p>
+          <div class="pdp__price">39,99€</div>
+
+          <div class="field" data-variant-group>
+            <label>Format</label>
+            <div class="variants">
+              <button class="variant active">30 portions</button>
+              <button class="variant">60 portions</button>
+              <button class="variant">Abonnement -15%</button>
+            </div>
+          </div>
+
+          <div class="field" data-variant-group>
+            <label>Intensité</label>
+            <div class="variants">
+              <button class="variant active">Corsé</button>
+              <button class="variant">Équilibré</button>
+              <button class="variant">Décaféiné</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Quantité</label>
+            <div class="qty" data-qty>
+              <button data-dir="down" aria-label="Moins">−</button>
+              <span>1</span>
+              <button data-dir="up" aria-label="Plus">+</button>
+            </div>
+          </div>
+
+          <div class="pdp__cart">
+            <button class="btn btn--primary btn--lg" style="flex:1" data-add-cart>Ajouter au panier · 39,99€</button>
+          </div>
+
+          <p class="pdp__desc">Livraison offerte dès 49€ · Paiement en 3x sans frais · Satisfait ou remboursé 30 jours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reassurance bar -->
+  <section class="reassure">
+    <div class="container">
+      <div class="reassure__row">
+        <div class="reassure__item"><span class="ico">🚫🍬</span>Sans sucres ajoutés</div>
+        <div class="reassure__item"><span class="ico">🌿</span>100% naturel</div>
+        <div class="reassure__item"><span class="ico">🌾</span>Sans gluten</div>
+        <div class="reassure__item"><span class="ico">🥛</span>Sans lactose</div>
+        <div class="reassure__item"><span class="ico">🐰</span>Non testé sur les animaux</div>
+        <div class="reassure__item"><span class="ico">🇫🇷</span>Fabriqué en France</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to prepare -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">En moins d'une minute</p>
+        <h2>Comment préparer ton rituel</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Dose</h3>
+          <p>Verse une cuillère de Café Noir Collagène dans ta tasse préférée.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Mélange</h3>
+          <p>Ajoute 200 ml d'eau chaude ou de lait végétal, puis fouette quelques secondes.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Savoure</h3>
+          <p>Installe-toi, respire, et profite de ton rituel. Voilà, c'est tout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Composition table -->
+  <section class="section section--tight" style="background:var(--white)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Transparence</p>
+        <h2>Composition &amp; valeurs nutritionnelles</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Pour une portion (10 g)</th><th>Quantité</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Énergie</td><td>38 kcal</td></tr>
+            <tr><td>Collagène marin hydrolysé</td><td>10 g</td></tr>
+            <tr><td>Protéines</td><td>9,5 g</td></tr>
+            <tr><td>Glucides (dont sucres)</td><td>0,2 g (0 g)</td></tr>
+            <tr><td>Caféine</td><td>80 mg</td></tr>
+            <tr><td>Vitamine C</td><td>80 mg (100% VNR)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="center muted" style="margin-top:18px;font-size:0.85rem">Ingrédients : café arabica soluble, collagène marin hydrolysé, acide ascorbique (vitamine C). Sans sucres ajoutés, sans gluten, sans lactose.</p>
+    </div>
+  </section>
+
+  <!-- Customer reviews -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Avis clients</p>
+        <h2>Ce qu'en pensent nos clientes</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>« Le meilleur café fonctionnel que j'ai testé. Aucun arrière-goût, juste un bon café. »</p>
+          <p class="who">Camille R. <span>· Achat vérifié</span></p>
+        </div>
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>« Je l'ai intégré à ma routine matinale, ma peau me dit merci après deux mois. »</p>
+          <p class="who">Inès B. <span>· Achat vérifié</span></p>
+        </div>
+        <div class="review-card">
+          <span class="stars">★★★★☆</span>
+          <p>« Très bon produit, format abonnement parfait. J'aurais aimé une version encore plus corsée. »</p>
+          <p class="who">Julien T. <span>· Achat vérifié</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo">LUMÉA</a>
+          <p class="about">Votre rituel, réinventé. Des cafés et matchas enrichis en collagène, pensés en France pour sublimer votre quotidien.</p>
+        </div>
+        <div>
+          <h4>Boutique</h4>
+          <ul>
+            <li><a href="collection.html">Cafés Collagène</a></li>
+            <li><a href="collection.html">Matcha Collagène</a></li>
+            <li><a href="collection.html">Rituels &amp; Compléments</a></li>
+            <li><a href="collection.html">Accessoires</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="about.html">Qui sommes-nous</a></li>
+            <li><a href="#">Nos ingrédients</a></li>
+            <li><a href="#">Avis clients</a></li>
+            <li><a href="#">Le journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Aide</h4>
+          <ul>
+            <li><a href="#">Livraison &amp; retours</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 LUMÉA. Tous droits réservés.</span>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

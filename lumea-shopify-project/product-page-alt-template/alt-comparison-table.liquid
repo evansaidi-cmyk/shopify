@@ -1,0 +1,179 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — « LUMÉA vs. le classique » (TEMPLATE ALTERNATIF)
+  =====================================================================
+  Remplace le bloc "Composition & valeurs nutritionnelles" sur le modèle
+  product.design-alternatif.
+  À coller dans un bloc "Custom Liquid".
+  Tableau de comparaison visuel (collagène, sucres, calories, vitamines).
+  CSS scopé (.lumea-ct-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • section_title / section_intro : titre + intro
+  • col_brand / col_other : noms des 2 colonnes comparées
+  • row_*  : chaque ligne = critère + valeur LUMÉA + valeur classique
+            (✓ = avantage, ✗ = inconvénient ; sinon texte libre)
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign section_title = "LUMÉA vs. le café classique"
+  assign section_intro = "Le même geste plaisir, mais pensé pour votre bien-être."
+  assign col_brand = "LUMÉA"
+  assign col_other = "Café classique"
+-%}
+
+<section class="lumea-ct" aria-label="{{ section_title }}">
+  <header class="lumea-ct__head">
+    <h2 class="lumea-ct__title">{{ section_title }}</h2>
+    <p class="lumea-ct__intro">{{ section_intro }}</p>
+  </header>
+
+  <table class="lumea-ct__table">
+    <thead>
+      <tr>
+        <th scope="col" class="lumea-ct__crit-head">Critère</th>
+        <th scope="col" class="lumea-ct__brand-head">{{ col_brand }}</th>
+        <th scope="col" class="lumea-ct__other-head">{{ col_other }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- comment -%} Personnalise les lignes ci-dessous {%- endcomment -%}
+      <tr>
+        <th scope="row">Collagène marin ajouté</th>
+        <td class="lumea-ct__yes"><span class="lumea-ct__mark">✓</span> 10 g / dose</td>
+        <td class="lumea-ct__no"><span class="lumea-ct__mark lumea-ct__mark--no">✗</span> Aucun</td>
+      </tr>
+      <tr>
+        <th scope="row">Sucres ajoutés</th>
+        <td class="lumea-ct__yes"><span class="lumea-ct__mark">✓</span> 0 g</td>
+        <td class="lumea-ct__no">Variable (sirops, sucre)</td>
+      </tr>
+      <tr>
+        <th scope="row">Calories par tasse</th>
+        <td class="lumea-ct__yes"><span class="lumea-ct__mark">✓</span> ~35 kcal</td>
+        <td class="lumea-ct__no">80 à 250 kcal*</td>
+      </tr>
+      <tr>
+        <th scope="row">Vitamines & actifs</th>
+        <td class="lumea-ct__yes"><span class="lumea-ct__mark">✓</span> Vit. C + acide hyaluronique</td>
+        <td class="lumea-ct__no"><span class="lumea-ct__mark lumea-ct__mark--no">✗</span> Aucun</td>
+      </tr>
+      <tr>
+        <th scope="row">Énergie</th>
+        <td class="lumea-ct__yes"><span class="lumea-ct__mark">✓</span> Stable, sans pic</td>
+        <td class="lumea-ct__no">Coup de fouet + chute</td>
+      </tr>
+      <tr>
+        <th scope="row">Origine</th>
+        <td class="lumea-ct__yes"><span class="lumea-ct__mark">✓</span> Fabriqué en France</td>
+        <td class="lumea-ct__no">Variable</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="lumea-ct__footnote">* Selon préparation (latte, cappuccino sucré, etc.).</p>
+</section>
+
+<style>
+  .lumea-ct {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    border-radius: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px 18px;
+    box-sizing: border-box;
+  }
+  .lumea-ct *, .lumea-ct *::before, .lumea-ct *::after { box-sizing: border-box; }
+
+  .lumea-ct__head { text-align: center; margin-bottom: 22px; }
+  .lumea-ct__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin: 0 0 8px;
+  }
+  .lumea-ct__intro { font-size: 0.95rem; color: rgba(43,39,34,0.75); margin: 0; }
+
+  .lumea-ct__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(43,39,34,0.06);
+    font-size: 0.85rem;
+  }
+  .lumea-ct__table th, .lumea-ct__table td {
+    padding: 14px 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(43,39,34,0.08);
+  }
+  .lumea-ct__table tbody tr:last-child th,
+  .lumea-ct__table tbody tr:last-child td { border-bottom: none; }
+
+  .lumea-ct__table th[scope="row"] {
+    text-align: left;
+    font-weight: 500;
+    color: var(--lumea-anthracite);
+    width: 38%;
+  }
+
+  /* En-têtes de colonnes */
+  .lumea-ct__crit-head { background: var(--lumea-creme); text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(43,39,34,0.55); }
+  .lumea-ct__brand-head {
+    background: var(--lumea-rose);
+    color: #fff;
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .lumea-ct__other-head {
+    background: rgba(140,155,123,0.18);
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: rgba(43,39,34,0.7);
+  }
+
+  /* Cellules valeurs */
+  .lumea-ct__yes { background: rgba(201,128,106,0.06); font-weight: 500; }
+  .lumea-ct__no  { color: rgba(43,39,34,0.6); }
+  .lumea-ct__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 999px;
+    background: var(--lumea-sauge);
+    color: #fff;
+    font-size: 0.7rem;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .lumea-ct__mark--no { background: rgba(43,39,34,0.25); }
+
+  .lumea-ct__footnote {
+    font-size: 0.72rem;
+    color: rgba(43,39,34,0.5);
+    margin: 12px 4px 0;
+    text-align: center;
+  }
+
+  /* ===== Tablette / Desktop ===== */
+  @media (min-width: 720px) {
+    .lumea-ct { padding: 40px; }
+    .lumea-ct__table { font-size: 0.92rem; }
+    .lumea-ct__table th, .lumea-ct__table td { padding: 18px 18px; }
+  }
+</style>
