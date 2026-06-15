@@ -1,0 +1,201 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — Composition & valeurs nutritionnelles ("Composition & nutrition")
+  =====================================================================
+  À coller dans un bloc "Custom Liquid" sur la fiche produit.
+  Liste d'ingrédients + tableau des valeurs nutritionnelles.
+  CSS scopé (.lumea-cn-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • section_title   : titre de la section
+  • ingredients_*   : liste des ingrédients (modifie / ajoute des <li>)
+  • allergen_note   : mention allergènes / conservation
+  • nutri_*         : lignes du tableau nutritionnel (pour 100 g et par dose)
+  • portion_label   : intitulé de la colonne "par dose"
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign section_title = "Composition & valeurs nutritionnelles"
+  assign ingredients_intro = "Une formule courte et transparente, sans additifs inutiles."
+  assign allergen_note = "Contient du poisson (collagène marin). À conserver au sec, à l'abri de la lumière. Compléter une alimentation variée et équilibrée."
+  assign portion_label = "Par dose (10 g)"
+-%}
+
+<section class="lumea-cn" aria-label="{{ section_title }}">
+  <h2 class="lumea-cn__title">{{ section_title }}</h2>
+  <p class="lumea-cn__intro">{{ ingredients_intro }}</p>
+
+  <div class="lumea-cn__grid">
+
+    {%- comment -%} ===== Colonne : liste d'ingrédients ===== {%- endcomment -%}
+    <div class="lumea-cn__card">
+      <h3 class="lumea-cn__subtitle">Ingrédients</h3>
+      <ul class="lumea-cn__ingredients">
+        {%- comment -%} Personnalise / ajoute des lignes ci-dessous {%- endcomment -%}
+        <li><strong>Collagène marin</strong> (peptides hydrolysés) — 10 g</li>
+        <li><strong>Café arabica</strong> torréfié et moulu finement</li>
+        <li><strong>Cacao maigre</strong> dégraissé (variante Mocha)</li>
+        <li><strong>Arôme naturel</strong> de vanille</li>
+        <li><strong>Vitamine C</strong> (acide L-ascorbique)</li>
+        <li><strong>Acide hyaluronique</strong></li>
+      </ul>
+      <p class="lumea-cn__allergen">{{ allergen_note }}</p>
+    </div>
+
+    {%- comment -%} ===== Colonne : tableau nutritionnel ===== {%- endcomment -%}
+    <div class="lumea-cn__card">
+      <h3 class="lumea-cn__subtitle">Valeurs nutritionnelles</h3>
+      <table class="lumea-cn__table">
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Pour 100 g</th>
+            <th scope="col">{{ portion_label }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- comment -%} Personnalise les valeurs ci-dessous {%- endcomment -%}
+          <tr><th scope="row">Énergie</th><td>1480 kJ / 350 kcal</td><td>148 kJ / 35 kcal</td></tr>
+          <tr><th scope="row">Matières grasses</th><td>0,5 g</td><td>&lt; 0,1 g</td></tr>
+          <tr><th scope="row">&nbsp;&nbsp;dont acides gras saturés</th><td>0,1 g</td><td>0 g</td></tr>
+          <tr><th scope="row">Glucides</th><td>2,0 g</td><td>0,2 g</td></tr>
+          <tr><th scope="row">&nbsp;&nbsp;dont sucres</th><td>0 g</td><td>0 g</td></tr>
+          <tr><th scope="row">Protéines</th><td>90 g</td><td>9 g</td></tr>
+          <tr><th scope="row">Sel</th><td>0,3 g</td><td>0,03 g</td></tr>
+          <tr><th scope="row">Collagène marin</th><td>100 g</td><td>10 g</td></tr>
+          <tr><th scope="row">Vitamine C</th><td>800 mg (1000% VNR*)</td><td>80 mg (100% VNR*)</td></tr>
+        </tbody>
+      </table>
+      <p class="lumea-cn__footnote">* VNR : Valeurs Nutritionnelles de Référence.</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .lumea-cn {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    border-radius: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 18px;
+    box-sizing: border-box;
+  }
+  .lumea-cn *, .lumea-cn *::before, .lumea-cn *::after { box-sizing: border-box; }
+
+  .lumea-cn__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin: 0 0 8px;
+  }
+  .lumea-cn__intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 22px;
+    color: rgba(43,39,34,0.8);
+    max-width: 60ch;
+  }
+
+  .lumea-cn__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lumea-cn__card {
+    background: #fff;
+    border: 1px solid rgba(140,155,123,0.25);
+    border-radius: 20px;
+    padding: 22px;
+  }
+  .lumea-cn__subtitle {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 14px;
+    color: var(--lumea-rose);
+  }
+
+  /* ===== Liste d'ingrédients ===== */
+  .lumea-cn__ingredients {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+  }
+  .lumea-cn__ingredients li {
+    position: relative;
+    padding: 9px 0 9px 22px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    border-bottom: 1px solid rgba(43,39,34,0.07);
+  }
+  .lumea-cn__ingredients li:last-child { border-bottom: none; }
+  .lumea-cn__ingredients li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 15px;
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: var(--lumea-sauge);
+  }
+  .lumea-cn__allergen {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: rgba(43,39,34,0.65);
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(43,39,34,0.15);
+  }
+
+  /* ===== Tableau nutritionnel ===== */
+  .lumea-cn__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .lumea-cn__table th[scope="col"] {
+    text-align: right;
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(43,39,34,0.6);
+    padding: 0 0 10px;
+    border-bottom: 2px solid var(--lumea-sauge);
+  }
+  .lumea-cn__table th[scope="col"]:first-child { text-align: left; }
+  .lumea-cn__table th[scope="row"] {
+    text-align: left;
+    font-weight: 500;
+    padding: 9px 8px 9px 0;
+  }
+  .lumea-cn__table td {
+    text-align: right;
+    padding: 9px 0;
+    color: rgba(43,39,34,0.85);
+    white-space: nowrap;
+  }
+  .lumea-cn__table tbody tr { border-bottom: 1px solid rgba(43,39,34,0.07); }
+  .lumea-cn__table tbody tr:last-child { border-bottom: none; }
+  .lumea-cn__footnote {
+    font-size: 0.72rem;
+    color: rgba(43,39,34,0.55);
+    margin: 12px 0 0;
+  }
+
+  /* ===== Tablette / Desktop ===== */
+  @media (min-width: 720px) {
+    .lumea-cn { padding: 40px; }
+    .lumea-cn__grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+  }
+</style>

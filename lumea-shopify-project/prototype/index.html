@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMÉA — Votre rituel, réinventé.</title>
+  <meta name="description" content="LUMÉA — cafés et matchas enrichis en collagène. Votre rituel, réinventé." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announce" data-announce>Code <strong>NOUVEAUSITE</strong> — -20% sur votre première commande</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">LUMÉA</a>
+      <nav class="nav">
+        <a href="collection.html">Cafés Collagène</a>
+        <a href="collection.html">Matcha Collagène</a>
+        <a href="collection.html">Rituels &amp; Compléments</a>
+        <a href="collection.html">Accessoires</a>
+        <a href="about.html">Qui sommes-nous</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn cart" aria-label="Panier">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart__count" data-cart-count>0</span>
+        </button>
+        <button class="icon-btn burger" data-burger aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__top">
+      <span class="logo">LUMÉA</span>
+      <button class="icon-btn" data-menu-close aria-label="Fermer">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav>
+      <a href="collection.html">Cafés Collagène</a>
+      <a href="collection.html">Matcha Collagène</a>
+      <a href="collection.html">Rituels &amp; Compléments</a>
+      <a href="collection.html">Accessoires</a>
+      <a href="about.html">Qui sommes-nous</a>
+    </nav>
+    <a href="collection.html" class="btn btn--primary btn--block">Découvrir nos rituels</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow" style="color:#fff;opacity:.9">Café &amp; Matcha enrichis en collagène</p>
+      <h1>Votre rituel,<br>réinventé.</h1>
+      <p>Des boissons gourmandes et fonctionnelles pour sublimer votre routine, du premier café du matin au matcha de l'après-midi.</p>
+      <a href="collection.html" class="btn btn--primary btn--lg">Découvrir nos rituels</a>
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span>+1 200 avis vérifiés</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product carousel -->
+  <section class="section">
+    <div class="container">
+      <div class="carousel-head">
+        <div>
+          <p class="eyebrow">Les favoris</p>
+          <h2>Nos rituels les plus aimés</h2>
+        </div>
+        <a href="collection.html">Tout voir →</a>
+      </div>
+      <div class="carousel">
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#3a2c24,#5a4334)">
+            <span class="badge badge--sauge">Best-seller</span>
+            <span class="card__cap" style="color:#f6f1e9">Café Noir</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Café Noir Collagène</h3>
+            <p class="card__sub">Intense &amp; soyeux · 10 g de collagène</p>
+            <p class="price">39,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#4a3527,#7a5640)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#f6f1e9">Mocha</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Mocha Collagène</h3>
+            <p class="card__sub">Cacao gourmand · 10 g de collagène</p>
+            <p class="price"><ins>39,99€</ins> <del>54,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#7c8a64,#9aa97f)">
+            <span class="badge badge--sauge">Nouveau</span>
+            <span class="card__cap" style="color:#fff">Matcha Original</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Matcha Original Collagène</h3>
+            <p class="card__sub">Cérémonie · énergie douce</p>
+            <p class="price">42,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#9aa97f,#caa0a6)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#fff">Matcha Fraise</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★☆</span>
+            <h3 class="card__title">Matcha Fraise Collagène</h3>
+            <p class="card__sub">Fruité &amp; gourmand · édition limitée</p>
+            <p class="price"><ins>42,99€</ins> <del>57,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#c9806a,#e0a48f)">
+            <span class="card__cap" style="color:#fff">Créatine</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Créatine</h3>
+            <p class="card__sub">Pure micronisée · sans goût</p>
+            <p class="price">29,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#2b2722,#4a4339)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#f6f1e9">Shaker</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Shaker Fouet Électrique</h3>
+            <p class="card__sub">Mousse parfaite en 10 secondes</p>
+            <p class="price"><ins>24,99€</ins> <del>39,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#efe7da,#d8cdbb)">
+            <span class="card__cap">Bouteille Verre</span>
+          </div>
+          <div class="card__body">
+            <span class="card__rating">★★★★☆</span>
+            <h3 class="card__title">Bouteille Verre</h3>
+            <p class="card__sub">500 ml · réutilisable</p>
+            <p class="price">19,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotlight blocks -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="spotlight">
+        <div class="spotlight__media">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Café collagène" loading="lazy" />
+        </div>
+        <div class="spotlight__body">
+          <p class="eyebrow">Cafés Collagène</p>
+          <h2>Le café qui prend soin de vous</h2>
+          <p>Un arabica torréfié avec précision, enrichi de 10 g de collagène marin par tasse. Le plaisir d'un grand café, la fonctionnalité en plus.</p>
+          <ul class="checks">
+            <li>10 g de collagène par portion</li>
+            <li>Sans sucres ajoutés</li>
+            <li>Crema onctueuse, goût intense</li>
+          </ul>
+          <a href="product.html" class="btn btn--primary">Découvrir le café</a>
+        </div>
+      </div>
+
+      <div class="spotlight spotlight--rev">
+        <div class="spotlight__media">
+          <img src="https://images.unsplash.com/photo-1536013455962-95e0e7e6c2e6?w=800" alt="Matcha collagène" loading="lazy" />
+        </div>
+        <div class="spotlight__body">
+          <p class="eyebrow">Matcha Collagène</p>
+          <h2>Une énergie verte, sans pic ni chute</h2>
+          <p>Un matcha de cérémonie japonais, vibrant et végétal, associé au collagène pour un rituel beauté et vitalité tout au long de la journée.</p>
+          <ul class="checks">
+            <li>Matcha grade cérémonie</li>
+            <li>Énergie stable, sans nervosité</li>
+            <li>100% naturel</li>
+          </ul>
+          <a href="product-alt.html" class="btn btn--sauge">Découvrir le matcha</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press banner -->
+  <section class="section section--tight press">
+    <div class="container">
+      <h2>Ils parlent de LUMÉA</h2>
+      <div class="press__logos">
+        <span>VOGUE</span>
+        <span>ELLE</span>
+        <span>Madame Figaro</span>
+        <span>Marie Claire</span>
+        <span>GQ</span>
+        <span>L'Officiel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-screen lifestyle banner -->
+  <section class="lifestyle bg-morning">
+    <div class="container">
+      <div class="lifestyle__body">
+        <p class="eyebrow" style="color:#fff;opacity:.9">Le rituel du matin</p>
+        <h2>Le rituel du matin, réinventé</h2>
+        <p>Prenez un instant pour vous. Une tasse, un geste, et une journée qui commence du bon pied.</p>
+        <a href="collection.html" class="btn btn--light">Composer mon rituel</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reassurance bar -->
+  <section class="reassure">
+    <div class="container">
+      <div class="reassure__row">
+        <div class="reassure__item"><span class="ico">🚫🍬</span>Sans sucres ajoutés</div>
+        <div class="reassure__item"><span class="ico">🌿</span>100% naturel</div>
+        <div class="reassure__item"><span class="ico">🌾</span>Sans gluten</div>
+        <div class="reassure__item"><span class="ico">🥛</span>Sans lactose</div>
+        <div class="reassure__item"><span class="ico">🐰</span>Non testé sur les animaux</div>
+        <div class="reassure__item"><span class="ico">🇫🇷</span>Fabriqué en France</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why LUMÉA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Pourquoi LUMÉA</p>
+        <h2>Le bon geste, sans compromis</h2>
+      </div>
+      <div class="cols3">
+        <div class="feature">
+          <div class="ico">✨</div>
+          <h3>Des actifs qui comptent</h3>
+          <p>10 g de collagène par portion, dosés pour des résultats visibles sur la peau, les cheveux et les ongles.</p>
+        </div>
+        <div class="feature">
+          <div class="ico">🍃</div>
+          <h3>Des ingrédients propres</h3>
+          <p>Sans sucres ajoutés, sans arômes artificiels. Des formules courtes et transparentes.</p>
+        </div>
+        <div class="feature">
+          <div class="ico">☕</div>
+          <h3>Un plaisir quotidien</h3>
+          <p>Parce qu'un rituel ne tient que s'il est délicieux. Le goût d'abord, toujours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ preview -->
+  <section class="section section--tight" style="background:var(--white)">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Tout ce qu'il faut savoir</h2>
+      </div>
+      <div class="accordion">
+        <div class="acc-item">
+          <button class="acc-trigger" data-acc-trigger>Qu'est-ce que le collagène apporte ?<span class="plus">+</span></button>
+          <div class="acc-panel"><p>Le collagène contribue au maintien de la peau, des cheveux et des ongles. Chaque portion LUMÉA en contient 10 g, idéal en cure quotidienne.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger" data-acc-trigger>Quel est le goût des boissons ?<span class="plus">+</span></button>
+          <div class="acc-panel"><p>Nos cafés gardent toute l'intensité d'un grand arabica, et nos matchas leur fraîcheur végétale. Le collagène est neutre en goût.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger" data-acc-trigger>Comment préparer mon rituel ?<span class="plus">+</span></button>
+          <div class="acc-panel"><p>Une dosette ou une cuillère, de l'eau chaude ou du lait végétal, un coup de fouet électrique : votre rituel est prêt en moins d'une minute.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-trigger" data-acc-trigger>Quand vais-je voir des résultats ?<span class="plus">+</span></button>
+          <div class="acc-panel"><p>La plupart de nos clientes constatent des effets sur la peau et les cheveux après 4 à 8 semaines de consommation régulière.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews carousel -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Avis clients</p>
+        <h2>+1 200 rituels adoptés</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>« Mon café du matin a une nouvelle dimension. Le goût est top et ma peau n'a jamais été aussi belle. »</p>
+          <p class="who">Camille R. <span>· Café Noir Collagène</span></p>
+        </div>
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>« Le matcha fraise est une tuerie. Énergie stable toute la journée, je ne peux plus m'en passer. »</p>
+          <p class="who">Léa M. <span>· Matcha Fraise Collagène</span></p>
+        </div>
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>« Enfin un complément que je prends avec plaisir. Le rituel est devenu un vrai moment pour moi. »</p>
+          <p class="who">Sophie D. <span>· Matcha Original Collagène</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section newsletter">
+    <div class="container center">
+      <h2>Rejoignez le rituel</h2>
+      <p>-20% sur votre première commande et nos rituels en avant-première.</p>
+      <form class="news-form" onsubmit="return false">
+        <input type="email" placeholder="Votre adresse e-mail" aria-label="E-mail" required />
+        <button class="btn btn--dark btn--block" type="submit">Je m'inscris</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo">LUMÉA</a>
+          <p class="about">Votre rituel, réinventé. Des cafés et matchas enrichis en collagène, pensés en France pour sublimer votre quotidien.</p>
+        </div>
+        <div>
+          <h4>Boutique</h4>
+          <ul>
+            <li><a href="collection.html">Cafés Collagène</a></li>
+            <li><a href="collection.html">Matcha Collagène</a></li>
+            <li><a href="collection.html">Rituels &amp; Compléments</a></li>
+            <li><a href="collection.html">Accessoires</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="about.html">Qui sommes-nous</a></li>
+            <li><a href="#">Nos ingrédients</a></li>
+            <li><a href="#">Avis clients</a></li>
+            <li><a href="#">Le journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Aide</h4>
+          <ul>
+            <li><a href="#">Livraison &amp; retours</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 LUMÉA. Tous droits réservés.</span>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
