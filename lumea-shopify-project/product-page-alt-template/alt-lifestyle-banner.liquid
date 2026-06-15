@@ -1,0 +1,108 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — Bannière lifestyle plein écran (TEMPLATE ALTERNATIF)
+  =====================================================================
+  Remplace la "Barre de réassurance" sur le modèle product.design-alternatif.
+  À coller dans un bloc "Custom Liquid".
+  Bannière immersive avec titre superposé + CTA.
+  CSS scopé (.lumea-lb-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • banner_image  : URL de l'image lifestyle plein écran
+  • headline      : titre superposé
+  • subheadline   : sous-titre / promesse
+  • cta_label     : libellé du bouton pilule
+  • cta_link      : lien du bouton (ancre vers le bloc d'achat, ex. #achat)
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign banner_image = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=80"
+  assign headline    = "Le rituel qui change tout"
+  assign subheadline = "Un café d'exception, sublimé par le collagène marin. Prends soin de toi, une tasse à la fois."
+  assign cta_label   = "Découvrir le rituel"
+  assign cta_link    = "#achat"
+-%}
+
+<section class="lumea-lb" style="background-image:url('{{ banner_image }}');">
+  <div class="lumea-lb__overlay">
+    <div class="lumea-lb__inner">
+      <h1 class="lumea-lb__headline">{{ headline }}</h1>
+      <p class="lumea-lb__sub">{{ subheadline }}</p>
+      <a class="lumea-lb__cta" href="{{ cta_link }}">{{ cta_label }}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lumea-lb {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+    --lumea-radius: 999px;
+
+    position: relative;
+    width: 100%;
+    min-height: 78vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    border-radius: 0;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    box-sizing: border-box;
+  }
+  .lumea-lb *, .lumea-lb *::before, .lumea-lb *::after { box-sizing: border-box; }
+
+  .lumea-lb__overlay {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(43,39,34,0.15) 0%, rgba(43,39,34,0.75) 100%);
+    padding: 32px 22px 44px;
+  }
+  .lumea-lb__inner {
+    max-width: 620px;
+    color: var(--lumea-creme);
+  }
+  .lumea-lb__headline {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 9vw, 4rem);
+    line-height: 1.05;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .lumea-lb__sub {
+    font-size: clamp(0.95rem, 3.6vw, 1.2rem);
+    line-height: 1.55;
+    margin: 0 0 26px;
+    opacity: 0.95;
+    max-width: 48ch;
+  }
+  .lumea-lb__cta {
+    display: inline-block;
+    background: var(--lumea-rose);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 15px 34px;
+    border-radius: var(--lumea-radius);
+    transition: transform .15s ease, background .2s ease;
+  }
+  .lumea-lb__cta:hover { background: #b56e58; transform: translateY(-2px); }
+
+  /* ===== Tablette / Desktop ===== */
+  @media (min-width: 720px) {
+    .lumea-lb { min-height: 88vh; }
+    .lumea-lb__overlay {
+      align-items: center;
+      padding: 0 8vw;
+      background: linear-gradient(90deg, rgba(43,39,34,0.7) 0%, rgba(43,39,34,0.2) 60%, rgba(43,39,34,0) 100%);
+    }
+  }
+</style>

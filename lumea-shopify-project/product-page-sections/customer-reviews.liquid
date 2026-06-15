@@ -1,0 +1,173 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — Avis clients ("Témoignages") — BONUS
+  =====================================================================
+  À coller dans un bloc "Custom Liquid" sur la fiche produit.
+  Bloc de témoignages avec note globale + cartes d'avis.
+  CSS scopé (.lumea-rev-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • section_title    : titre de la section
+  • rating_avg       : note moyenne affichée (ex. "4,8")
+  • rating_count     : nombre d'avis (ex. "327")
+  • review_*         : pour chaque avis -> auteur, note (1-5), texte, badge
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign section_title = "Ce qu'en disent nos client·e·s"
+  assign rating_avg   = "4,8"
+  assign rating_count = "327"
+
+  assign review_1_author = "Camille L."
+  assign review_1_stars  = 5
+  assign review_1_text   = "Mon rituel du matin a complètement changé. Le goût est délicieux et je sens une vraie différence sur ma peau après 6 semaines."
+  assign review_1_badge  = "Achat vérifié"
+
+  assign review_2_author = "Sarah M."
+  assign review_2_stars  = 5
+  assign review_2_text   = "Enfin un café au collagène qui ne donne pas de mauvais goût ! Texture parfaite, mousse super bien avec un peu de lait d'avoine."
+  assign review_2_badge  = "Achat vérifié"
+
+  assign review_3_author = "Julien R."
+  assign review_3_stars  = 4
+  assign review_3_text   = "Très bon produit, énergie stable toute la matinée sans le coup de barre habituel. Je recommande pour remplacer le café classique."
+  assign review_3_badge  = "Achat vérifié"
+-%}
+
+{%- comment -%} Génère les étoiles selon la note (1 à 5) {%- endcomment -%}
+{%- capture stars_1 -%}{% for i in (1..5) %}{% if i <= review_1_stars %}★{% else %}☆{% endif %}{% endfor %}{%- endcapture -%}
+{%- capture stars_2 -%}{% for i in (1..5) %}{% if i <= review_2_stars %}★{% else %}☆{% endif %}{% endfor %}{%- endcapture -%}
+{%- capture stars_3 -%}{% for i in (1..5) %}{% if i <= review_3_stars %}★{% else %}☆{% endif %}{% endfor %}{%- endcapture -%}
+
+<section class="lumea-rev" aria-label="{{ section_title }}">
+  <header class="lumea-rev__head">
+    <h2 class="lumea-rev__title">{{ section_title }}</h2>
+    <div class="lumea-rev__summary">
+      <span class="lumea-rev__stars" aria-hidden="true">★★★★★</span>
+      <span class="lumea-rev__avg"><strong>{{ rating_avg }}</strong>/5</span>
+      <span class="lumea-rev__count">— {{ rating_count }} avis vérifiés</span>
+    </div>
+  </header>
+
+  <ul class="lumea-rev__list">
+    <li class="lumea-rev__card">
+      <span class="lumea-rev__card-stars" aria-hidden="true">{{ stars_1 }}</span>
+      <p class="lumea-rev__card-text">“{{ review_1_text }}”</p>
+      <p class="lumea-rev__card-meta">
+        <span class="lumea-rev__author">{{ review_1_author }}</span>
+        <span class="lumea-rev__badge">{{ review_1_badge }}</span>
+      </p>
+    </li>
+    <li class="lumea-rev__card">
+      <span class="lumea-rev__card-stars" aria-hidden="true">{{ stars_2 }}</span>
+      <p class="lumea-rev__card-text">“{{ review_2_text }}”</p>
+      <p class="lumea-rev__card-meta">
+        <span class="lumea-rev__author">{{ review_2_author }}</span>
+        <span class="lumea-rev__badge">{{ review_2_badge }}</span>
+      </p>
+    </li>
+    <li class="lumea-rev__card">
+      <span class="lumea-rev__card-stars" aria-hidden="true">{{ stars_3 }}</span>
+      <p class="lumea-rev__card-text">“{{ review_3_text }}”</p>
+      <p class="lumea-rev__card-meta">
+        <span class="lumea-rev__author">{{ review_3_author }}</span>
+        <span class="lumea-rev__badge">{{ review_3_badge }}</span>
+      </p>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .lumea-rev {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+    --lumea-gold: #C9806A;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    border-radius: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 18px;
+    box-sizing: border-box;
+  }
+  .lumea-rev *, .lumea-rev *::before, .lumea-rev *::after { box-sizing: border-box; }
+
+  .lumea-rev__head { text-align: center; margin-bottom: 24px; }
+  .lumea-rev__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin: 0 0 12px;
+  }
+  .lumea-rev__summary {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+  .lumea-rev__stars { color: var(--lumea-gold); letter-spacing: 2px; font-size: 1.1rem; }
+  .lumea-rev__avg { font-size: 1rem; }
+  .lumea-rev__count { color: rgba(43,39,34,0.6); }
+
+  .lumea-rev__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lumea-rev__card {
+    background: #fff;
+    border: 1px solid rgba(140,155,123,0.25);
+    border-radius: 20px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lumea-rev__card-stars { color: var(--lumea-gold); letter-spacing: 2px; font-size: 1.05rem; }
+  .lumea-rev__card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(43,39,34,0.9);
+    flex: 1;
+  }
+  .lumea-rev__card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding-top: 8px;
+    border-top: 1px solid rgba(43,39,34,0.07);
+  }
+  .lumea-rev__author {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .lumea-rev__badge {
+    font-size: 0.7rem;
+    color: var(--lumea-sauge);
+    background: rgba(140,155,123,0.15);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+
+  /* ===== Tablette / Desktop ===== */
+  @media (min-width: 720px) {
+    .lumea-rev { padding: 40px; }
+    .lumea-rev__list { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  }
+</style>

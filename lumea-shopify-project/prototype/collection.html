@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafés Collagène — LUMÉA</title>
+  <meta name="description" content="Découvrez la collection Cafés Collagène LUMÉA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="announce" data-announce>Code <strong>NOUVEAUSITE</strong> — -20% sur votre première commande</div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">LUMÉA</a>
+      <nav class="nav">
+        <a href="collection.html">Cafés Collagène</a>
+        <a href="collection.html">Matcha Collagène</a>
+        <a href="collection.html">Rituels &amp; Compléments</a>
+        <a href="collection.html">Accessoires</a>
+        <a href="about.html">Qui sommes-nous</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn cart" aria-label="Panier">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart__count" data-cart-count>0</span>
+        </button>
+        <button class="icon-btn burger" data-burger aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <div class="mobile-menu__top">
+      <span class="logo">LUMÉA</span>
+      <button class="icon-btn" data-menu-close aria-label="Fermer">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav>
+      <a href="collection.html">Cafés Collagène</a>
+      <a href="collection.html">Matcha Collagène</a>
+      <a href="collection.html">Rituels &amp; Compléments</a>
+      <a href="collection.html">Accessoires</a>
+      <a href="about.html">Qui sommes-nous</a>
+    </nav>
+    <a href="collection.html" class="btn btn--primary btn--block">Découvrir nos rituels</a>
+  </div>
+
+  <!-- Category banner -->
+  <section class="section section--tight" style="background:var(--white)">
+    <div class="container center">
+      <p class="eyebrow">Collection</p>
+      <h1 style="font-size:clamp(2rem,7vw,3.4rem)">Cafés Collagène</h1>
+      <p class="muted" style="max-width:560px;margin:14px auto 0">Des cafés d'exception enrichis en collagène marin. L'intensité d'un grand arabica, la fonctionnalité d'un complément, dans une seule tasse.</p>
+      <div class="cols3" style="margin-top:36px">
+        <div class="feature">
+          <div class="ico">☕</div>
+          <h3>Goût intense</h3>
+          <p>Arabica torréfié avec soin, crema onctueuse.</p>
+        </div>
+        <div class="feature">
+          <div class="ico">✨</div>
+          <h3>10 g de collagène</h3>
+          <p>Une dose efficace dans chaque portion.</p>
+        </div>
+        <div class="feature">
+          <div class="ico">🌿</div>
+          <h3>Sans sucres ajoutés</h3>
+          <p>Des formules propres et transparentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product grid -->
+  <section class="section">
+    <div class="container">
+      <div class="product-grid">
+        <article class="card">
+          <a href="product.html" class="card__media" style="background:linear-gradient(160deg,#3a2c24,#5a4334)">
+            <span class="badge badge--sauge">Best-seller</span>
+            <span class="card__cap" style="color:#f6f1e9">Café Noir</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Café Noir Collagène</h3>
+            <p class="card__sub">Intense &amp; soyeux</p>
+            <p class="price">39,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product.html" class="card__media" style="background:linear-gradient(160deg,#4a3527,#7a5640)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#f6f1e9">Mocha</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Mocha Collagène</h3>
+            <p class="card__sub">Cacao gourmand</p>
+            <p class="price"><ins>39,99€</ins> <del>54,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product-alt.html" class="card__media" style="background:linear-gradient(160deg,#7c8a64,#9aa97f)">
+            <span class="badge badge--sauge">Nouveau</span>
+            <span class="card__cap" style="color:#fff">Matcha Original</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Matcha Original Collagène</h3>
+            <p class="card__sub">Énergie douce</p>
+            <p class="price">42,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product-alt.html" class="card__media" style="background:linear-gradient(160deg,#9aa97f,#caa0a6)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#fff">Matcha Fraise</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★☆</span>
+            <h3 class="card__title">Matcha Fraise Collagène</h3>
+            <p class="card__sub">Fruité &amp; gourmand</p>
+            <p class="price"><ins>42,99€</ins> <del>57,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product.html" class="card__media" style="background:linear-gradient(160deg,#c9806a,#e0a48f)">
+            <span class="card__cap" style="color:#fff">Créatine</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Créatine</h3>
+            <p class="card__sub">Pure micronisée</p>
+            <p class="price">29,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product.html" class="card__media" style="background:linear-gradient(160deg,#2b2722,#4a4339)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#f6f1e9">Shaker</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Shaker Fouet Électrique</h3>
+            <p class="card__sub">Mousse en 10 sec.</p>
+            <p class="price"><ins>24,99€</ins> <del>39,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product.html" class="card__media" style="background:linear-gradient(160deg,#efe7da,#d8cdbb)">
+            <span class="card__cap">Bouteille Verre</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★☆</span>
+            <h3 class="card__title">Bouteille Verre</h3>
+            <p class="card__sub">500 ml · réutilisable</p>
+            <p class="price">19,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="product-alt.html" class="card__media" style="background:linear-gradient(160deg,#8C9B7B,#b3bf9d)">
+            <span class="badge">Édition</span>
+            <span class="card__cap" style="color:#fff">Rituel Découverte</span>
+          </a>
+          <div class="card__body">
+            <span class="card__rating">★★★★★</span>
+            <h3 class="card__title">Coffret Rituel Découverte</h3>
+            <p class="card__sub">Café + Matcha + Shaker</p>
+            <p class="price">79,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter au panier</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-sell carousel -->
+  <section class="section section--tight" style="background:var(--white)">
+    <div class="container">
+      <div class="carousel-head">
+        <div>
+          <p class="eyebrow">Complète ton rituel</p>
+          <h2>Les indispensables</h2>
+        </div>
+        <a href="collection.html">Tout voir →</a>
+      </div>
+      <div class="carousel">
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#2b2722,#4a4339)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#f6f1e9">Shaker</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Shaker Fouet Électrique</h3>
+            <p class="price"><ins>24,99€</ins> <del>39,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#efe7da,#d8cdbb)">
+            <span class="card__cap">Bouteille</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Bouteille Verre</h3>
+            <p class="price">19,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#c9806a,#e0a48f)">
+            <span class="card__cap" style="color:#fff">Créatine</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Créatine</h3>
+            <p class="price">29,99€</p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__media" style="background:linear-gradient(160deg,#9aa97f,#caa0a6)">
+            <span class="badge badge--promo">Promo</span>
+            <span class="card__cap" style="color:#fff">Matcha Fraise</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Matcha Fraise Collagène</h3>
+            <p class="price"><ins>42,99€</ins> <del>57,99€</del></p>
+            <button class="btn btn--dark btn--block" data-add-cart>Ajouter</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="logo">LUMÉA</a>
+          <p class="about">Votre rituel, réinventé. Des cafés et matchas enrichis en collagène, pensés en France pour sublimer votre quotidien.</p>
+        </div>
+        <div>
+          <h4>Boutique</h4>
+          <ul>
+            <li><a href="collection.html">Cafés Collagène</a></li>
+            <li><a href="collection.html">Matcha Collagène</a></li>
+            <li><a href="collection.html">Rituels &amp; Compléments</a></li>
+            <li><a href="collection.html">Accessoires</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="about.html">Qui sommes-nous</a></li>
+            <li><a href="#">Nos ingrédients</a></li>
+            <li><a href="#">Avis clients</a></li>
+            <li><a href="#">Le journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Aide</h4>
+          <ul>
+            <li><a href="#">Livraison &amp; retours</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">CGV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 LUMÉA. Tous droits réservés.</span>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

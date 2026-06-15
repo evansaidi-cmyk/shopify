@@ -1,0 +1,160 @@
+{%- comment -%}
+  =====================================================================
+  LUMÉA — L'histoire de l'ingrédient (TEMPLATE ALTERNATIF)
+  =====================================================================
+  Remplace le bloc "Comment préparer ton rituel" sur le modèle
+  product.design-alternatif.
+  À coller dans un bloc "Custom Liquid".
+  Storytelling sur l'origine & le sourcing (collagène / café / matcha).
+  CSS scopé (.lumea-is-*). Pas de JS nécessaire.
+
+  -------------------------------------------------------------------
+  ⚙️  VARIABLES À PERSONNALISER
+  -------------------------------------------------------------------
+  • section_eyebrow / section_title : sur-titre + titre
+  • story_image : URL de l'image d'illustration (origine ingrédient)
+  • story_p1 / story_p2 : paragraphes du récit
+  • point_1/2/3 : 3 piliers de sourcing (titre + texte)
+  -------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- liquid
+  assign section_eyebrow = "Notre ingrédient signature"
+  assign section_title   = "L'histoire du collagène marin"
+  assign story_image     = "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1200&q=80"
+
+  assign story_p1 = "Tout commence sur les côtes de l'Atlantique, où nous sélectionnons un collagène marin issu d'une pêche responsable. Les peptides sont hydrolysés selon un procédé doux qui préserve leur pureté et garantit une assimilation optimale par l'organisme."
+  assign story_p2 = "Associé à un café arabica torréfié en France et à un matcha cérémonial du Japon, ce collagène devient le cœur d'un rituel quotidien : le plaisir d'une boisson chaude, au service de votre éclat naturel."
+
+  assign point_1_title = "Pêche responsable"
+  assign point_1_text  = "Une ressource tracée, issue de filières durables et certifiées."
+
+  assign point_2_title = "Procédé doux"
+  assign point_2_text  = "Hydrolyse à basse température pour une pureté maximale."
+
+  assign point_3_title = "Assemblage français"
+  assign point_3_text  = "Torréfaction et conditionnement réalisés en France."
+-%}
+
+<section class="lumea-is" aria-label="{{ section_title }}">
+  <div class="lumea-is__media">
+    <img class="lumea-is__img" src="{{ story_image }}" alt="{{ section_title }}" loading="lazy">
+  </div>
+
+  <div class="lumea-is__body">
+    <p class="lumea-is__eyebrow">{{ section_eyebrow }}</p>
+    <h2 class="lumea-is__title">{{ section_title }}</h2>
+    <p class="lumea-is__text">{{ story_p1 }}</p>
+    <p class="lumea-is__text">{{ story_p2 }}</p>
+
+    <ul class="lumea-is__points">
+      <li class="lumea-is__point">
+        <span class="lumea-is__num">01</span>
+        <span>
+          <strong class="lumea-is__point-title">{{ point_1_title }}</strong>
+          <span class="lumea-is__point-text">{{ point_1_text }}</span>
+        </span>
+      </li>
+      <li class="lumea-is__point">
+        <span class="lumea-is__num">02</span>
+        <span>
+          <strong class="lumea-is__point-title">{{ point_2_title }}</strong>
+          <span class="lumea-is__point-text">{{ point_2_text }}</span>
+        </span>
+      </li>
+      <li class="lumea-is__point">
+        <span class="lumea-is__num">03</span>
+        <span>
+          <strong class="lumea-is__point-title">{{ point_3_title }}</strong>
+          <span class="lumea-is__point-text">{{ point_3_text }}</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .lumea-is {
+    --lumea-rose: #C9806A;
+    --lumea-sauge: #8C9B7B;
+    --lumea-creme: #F6F1E9;
+    --lumea-anthracite: #2B2722;
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--lumea-anthracite);
+    background: var(--lumea-creme);
+    border-radius: 24px;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .lumea-is *, .lumea-is *::before, .lumea-is *::after { box-sizing: border-box; }
+
+  .lumea-is__media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--lumea-sauge);
+  }
+  .lumea-is__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .lumea-is__body { padding: 28px 22px; }
+  .lumea-is__eyebrow {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: var(--lumea-rose);
+    margin: 0 0 8px;
+  }
+  .lumea-is__title {
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    line-height: 1.12;
+    margin: 0 0 16px;
+  }
+  .lumea-is__text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(43,39,34,0.82);
+    margin: 0 0 14px;
+  }
+
+  .lumea-is__points {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 16px;
+  }
+  .lumea-is__point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .lumea-is__num {
+    flex: none;
+    font-family: 'Sora', 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #fff;
+    background: var(--lumea-rose);
+    width: 38px; height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+  }
+  .lumea-is__point-title { display: block; font-family: 'Sora','Poppins',sans-serif; font-size: 0.95rem; margin-bottom: 2px; }
+  .lumea-is__point-text { display: block; font-size: 0.85rem; line-height: 1.45; color: rgba(43,39,34,0.7); }
+
+  /* ===== Tablette / Desktop ===== */
+  @media (min-width: 820px) {
+    .lumea-is { flex-direction: row; align-items: stretch; }
+    .lumea-is__media { width: 46%; aspect-ratio: auto; min-height: 520px; }
+    .lumea-is__body { width: 54%; padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+  }
+</style>
