@@ -1,0 +1,18 @@
+{
+  "current": {
+    "color_primary": "#C9806A",
+    "color_secondary": "#8C9B7B",
+    "color_background": "#F6F1E9",
+    "color_text": "#2B2722",
+    "font_heading": "Poppins",
+    "font_body": "Inter",
+    "heading_scale": 100,
+    "logo_width": 140,
+    "social_instagram": "https://instagram.com",
+    "social_facebook": "https://facebook.com",
+    "social_tiktok": "https://tiktok.com",
+    "footer_copyright": "LUMÉA. Tous droits réservés.",
+    "show_payment_icons": true
+  },
+  "presets": {}
+}

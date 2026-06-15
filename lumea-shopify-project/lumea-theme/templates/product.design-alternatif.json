@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": { "type": "main-product" },
+    "alt-lifestyle-banner": { "type": "alt-lifestyle-banner" },
+    "ingredient-story": { "type": "ingredient-story" },
+    "comparison-table": { "type": "comparison-table" }
+  },
+  "order": [
+    "main",
+    "alt-lifestyle-banner",
+    "ingredient-story",
+    "comparison-table"
+  ]
+}

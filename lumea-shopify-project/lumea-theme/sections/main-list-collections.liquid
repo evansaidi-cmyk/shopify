@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h1>Nos collections</h1>
+    </div>
+    <div class="collection-list">
+      {%- for collection in collections -%}
+        <a href="{{ collection.url }}" class="collection-tile">
+          {%- if collection.image -%}
+            <img src="{{ collection.image | image_url: width: 800 }}" alt="{{ collection.title | escape }}">
+          {%- elsif collection.products.first.featured_image -%}
+            <img src="{{ collection.products.first.featured_image | image_url: width: 800 }}" alt="{{ collection.title | escape }}">
+          {%- endif -%}
+          <div class="collection-tile__overlay"></div>
+          <span class="collection-tile__title">{{ collection.title }}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Liste des collections",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Liste des collections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+<section class="section"><div class="container"><div class="section__head"><h2>{{ section.settings.heading }}</h2></div><div class="composition__grid">
+   <div class="composition__list"><h3>{{ section.settings.ingredients_title }}</h3><ul>{% for block in section.blocks %}{% if block.type == 'ingredient' %}<li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>{% endif %}{% endfor %}</ul></div>
+   <div><h3>{{ section.settings.nutrition_title }}</h3><table class="nutrition-table"><thead><tr><th>Nutriment</th><th>Pour 100g</th></tr></thead><tbody>{% for block in section.blocks %}{% if block.type == 'nutrient' %}<tr {{ block.shopify_attributes }}><td>{{ block.settings.label }}</td><td>{{ block.settings.value }}</td></tr>{% endif %}{% endfor %}</tbody></table></div>
+ </div></div></section>
+
+{% schema %}
+{
+  "name": "Composition & nutrition",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Composition & valeurs nutritionnelles" },
+    { "type": "text", "id": "ingredients_title", "label": "Titre ingrédients", "default": "Ingrédients" },
+    { "type": "text", "id": "nutrition_title", "label": "Titre valeurs nutritionnelles", "default": "Valeurs nutritionnelles" }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingrédient",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Ingrédient" }
+      ]
+    },
+    {
+      "type": "nutrient",
+      "name": "Nutriment",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Nutriment" },
+        { "type": "text", "id": "value", "label": "Valeur" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Composition & nutrition",
+      "blocks": [
+        { "type": "ingredient", "settings": { "text": "Café arabica 100% Robusta-free" } },
+        { "type": "ingredient", "settings": { "text": "Collagène marin hydrolysé" } },
+        { "type": "ingredient", "settings": { "text": "Cacao maigre" } },
+        { "type": "ingredient", "settings": { "text": "Arôme naturel de vanille" } },
+        { "type": "nutrient", "settings": { "label": "Énergie", "value": "380 kcal" } },
+        { "type": "nutrient", "settings": { "label": "Protéines", "value": "60 g" } },
+        { "type": "nutrient", "settings": { "label": "Glucides", "value": "8 g" } },
+        { "type": "nutrient", "settings": { "label": "Lipides", "value": "3 g" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

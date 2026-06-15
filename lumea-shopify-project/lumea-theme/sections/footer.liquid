@@ -1,0 +1,116 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <h3>LUMÉA</h3>
+        <p>{{ section.settings.tagline }}</p>
+        <div class="footer__social">
+          {% if settings.social_instagram != blank %}
+            <a href="{{ settings.social_instagram }}">IG</a>
+          {% endif %}
+          {% if settings.social_facebook != blank %}
+            <a href="{{ settings.social_facebook }}">FB</a>
+          {% endif %}
+          {% if settings.social_tiktok != blank %}
+            <a href="{{ settings.social_tiktok }}">TT</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>{{ section.settings.heading_1 }}</h4>
+        {% for link in linklists[section.settings.menu_1].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+
+      <div class="footer__col">
+        <h4>{{ section.settings.heading_2 }}</h4>
+        {% for link in linklists[section.settings.menu_2].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+
+      <div class="footer__col footer__newsletter">
+        <h4>{{ section.settings.newsletter_heading }}</h4>
+        <p>{{ section.settings.newsletter_text }}</p>
+        {% form 'customer', class: 'footer__newsletter-form' %}
+          {% if form.posted_successfully? %}
+            <p>Merci pour votre inscription !</p>
+          {% endif %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" name="contact[email]" placeholder="Votre adresse e-mail" required>
+          <button type="submit" class="btn btn--primary">S'inscrire</button>
+        {% endform %}
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ settings.footer_copyright }}</span>
+      {% if settings.show_payment_icons %}
+        <div class="footer__payment">
+          <span>Visa</span>
+          <span>MC</span>
+          <span>PayPal</span>
+          <span>Amex</span>
+          <span>Apple Pay</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Slogan",
+      "default": "Le rituel du matin, réinventé. Café et matcha enrichis en collagène."
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu colonne 1",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Titre colonne 1",
+      "default": "Boutique"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu colonne 2",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Titre colonne 2",
+      "default": "À propos"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Titre newsletter",
+      "default": "Newsletter"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Texte newsletter",
+      "default": "Reçois nos rituels et offres en avant-première."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pied de page"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+<div class="announcement-bar" data-announcement>
+  <p data-announcement-item>{{ section.settings.text }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Barre d'annonce",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texte",
+      "default": "Lancement LUMÉA — -20% dès 2 produits avec le code NOUVEAUSITE"
+    }
+  ]
+}
+{% endschema %}

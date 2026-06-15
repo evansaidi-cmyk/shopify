@@ -1,0 +1,66 @@
+{
+  "general": {
+    "general": {
+      "menu": "Menu",
+      "search": "Rechercher",
+      "close": "Fermer",
+      "loading": "Chargement"
+    },
+    "404": {
+      "title": "Page introuvable",
+      "description": "La page que vous recherchez n'existe pas.",
+      "link": "Continuer mes achats"
+    },
+    "newsletter": {
+      "label": "E-mail",
+      "button": "S'inscrire",
+      "success": "Merci pour votre inscription.",
+      "placeholder": "Votre adresse e-mail"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "search": {
+      "title": "Recherche",
+      "placeholder": "Rechercher",
+      "no_results": "Aucun résultat trouvé.",
+      "results_with_count": {
+        "one": "{{ count }} résultat",
+        "other": "{{ count }} résultats"
+      }
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "sold_out": "Épuisé",
+      "unavailable": "Indisponible",
+      "on_sale": "Promo",
+      "quantity": "Quantité",
+      "price": "Prix",
+      "regular_price": "Prix normal",
+      "sale_price": "Prix soldé",
+      "from_price": "À partir de"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Votre panier",
+      "empty": "Votre panier est vide.",
+      "subtotal": "Sous-total",
+      "checkout": "Passer la commande",
+      "remove": "Retirer",
+      "continue_shopping": "Continuer mes achats"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Lire la suite",
+      "posted_in": "Publié dans"
+    }
+  },
+  "footer": {
+    "newsletter_heading": "Rejoins le mouvement"
+  }
+}

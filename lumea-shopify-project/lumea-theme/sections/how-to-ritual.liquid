@@ -1,0 +1,78 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="cols-3">
+      {% for block in section.blocks %}
+        <div class="feature" {{ block.shopify_attributes }}>
+          <div class="feature__step">{{ forloop.index }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Le rituel en 3 étapes",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Le rituel en 3 étapes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Verser"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Verse une dose dans 200ml d'eau chaude ou de lait."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Le rituel en 3 étapes",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Verser",
+            "text": "Verse une dose dans 200ml d'eau chaude ou de lait."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Mélanger",
+            "text": "Mélange ou fais mousser jusqu'à obtenir une texture onctueuse."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Savourer",
+            "text": "Savoure ton rituel LUMÉA, chaud ou glacé."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

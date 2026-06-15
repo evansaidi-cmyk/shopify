@@ -1,0 +1,68 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head"><h1>Mon panier</h1></div>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate>
+        <div class="cart__items">
+          {%- for item in cart.items -%}
+            <div class="cart__item">
+              <a href="{{ item.url }}">
+                {%- if item.image -%}
+                  <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" width="80" height="80">
+                {%- else -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+                {%- endif -%}
+              </a>
+              <div>
+                <a href="{{ item.url }}" class="cart__title">{{ item.product.title }}</a>
+                {%- unless item.variant.title contains 'Default' -%}
+                  <div class="section__subtext">{{ item.variant.title }}</div>
+                {%- endunless -%}
+                <div class="price">{{ item.final_price | money }}</div>
+                <div class="qty" data-qty>
+                  <input
+                    class="qty-input"
+                    type="number"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    inputmode="numeric"
+                    aria-label="Quantité">
+                </div>
+                <a href="{{ item.url_to_remove }}" class="section__subtext">Retirer</a>
+              </div>
+              <div class="price">{{ item.final_line_price | money }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="cart__totals">
+          <div class="cart__subtotal">Sous-total : {{ cart.total_price | money }}</div>
+          <p class="section__subtext">Taxes et frais de livraison calculés à la commande.</p>
+          <div class="product-form__buy">
+            <button type="submit" name="update" class="btn btn--outline">Mettre à jour</button>
+            <button type="submit" name="checkout" class="btn btn--primary">Passer la commande</button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="cart__empty">
+        <p>Ton panier est vide.</p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn--primary">Découvrir nos produits</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Panier",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Panier"
+    }
+  ]
+}
+{% endschema %}

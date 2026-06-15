@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "hero": { "type": "hero" },
+    "product-carousel": { "type": "product-carousel" },
+    "spotlight": { "type": "spotlight" },
+    "press-banner": { "type": "press-banner" },
+    "lifestyle-banner": { "type": "lifestyle-banner" },
+    "reassurance-bar": { "type": "reassurance-bar" },
+    "why-lumea": { "type": "why-lumea" },
+    "faq": { "type": "faq" },
+    "reviews": { "type": "reviews" },
+    "newsletter": { "type": "newsletter" }
+  },
+  "order": [
+    "hero",
+    "product-carousel",
+    "spotlight",
+    "press-banner",
+    "lifestyle-banner",
+    "reassurance-bar",
+    "why-lumea",
+    "faq",
+    "reviews",
+    "newsletter"
+  ]
+}

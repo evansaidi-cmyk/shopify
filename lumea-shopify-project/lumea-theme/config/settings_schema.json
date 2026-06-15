@@ -1,0 +1,138 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "LUMÉA",
+    "theme_version": "1.0.0",
+    "theme_author": "LUMÉA",
+    "theme_documentation_url": "https://lumea.example.com",
+    "theme_support_url": "https://lumea.example.com/support"
+  },
+  {
+    "name": "Couleurs",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Palette de la marque"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Couleur principale (Argile Rosé)",
+        "default": "#C9806A"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Couleur secondaire (Vert Sauge)",
+        "default": "#8C9B7B"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Arrière-plan (Crème)",
+        "default": "#F6F1E9"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Texte (Anthracite)",
+        "default": "#2B2722"
+      }
+    ]
+  },
+  {
+    "name": "Typographie",
+    "settings": [
+      {
+        "type": "select",
+        "id": "font_heading",
+        "label": "Police des titres",
+        "options": [
+          { "value": "Poppins", "label": "Poppins" },
+          { "value": "Inter", "label": "Inter" }
+        ],
+        "default": "Poppins"
+      },
+      {
+        "type": "select",
+        "id": "font_body",
+        "label": "Police du corps",
+        "options": [
+          { "value": "Inter", "label": "Inter" },
+          { "value": "Poppins", "label": "Poppins" }
+        ],
+        "default": "Inter"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Échelle des titres",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 320,
+        "step": 10,
+        "unit": "px",
+        "label": "Largeur du logo",
+        "default": 140
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Réseaux sociaux et pied de page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "URL Instagram",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "URL Facebook",
+        "default": "https://facebook.com"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "URL TikTok",
+        "default": "https://tiktok.com"
+      },
+      {
+        "type": "text",
+        "id": "footer_copyright",
+        "label": "Texte de copyright",
+        "default": "LUMÉA. Tous droits réservés."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Afficher les icônes de paiement",
+        "default": true
+      }
+    ]
+  }
+]

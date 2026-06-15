@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="container">
+    <div class="page-content">
+      <h1>{{ article.title }}</h1>
+      <div class="article__meta">Par {{ article.author }} • {{ article.published_at | date: '%d %B %Y' }}</div>
+      {%- if article.image -%}
+        <div class="article__hero">
+          <img src="{{ article.image | image_url: width: 1200 }}" alt="{{ article.title | escape }}">
+        </div>
+      {%- endif -%}
+      <div class="rte">{{ article.content }}</div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Article"
+    }
+  ]
+}
+{% endschema %}

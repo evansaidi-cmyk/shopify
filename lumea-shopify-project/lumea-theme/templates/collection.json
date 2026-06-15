@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "category-banner": { "type": "category-banner" },
+    "main": { "type": "main-collection" },
+    "complete-ritual": { "type": "complete-ritual" }
+  },
+  "order": [
+    "category-banner",
+    "main",
+    "complete-ritual"
+  ]
+}

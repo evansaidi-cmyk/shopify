@@ -1,0 +1,46 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h1>{{ blog.title }}</h1>
+    </div>
+    {%- paginate blog.articles by 9 -%}
+      <div class="blog-grid">
+        {%- for article in blog.articles -%}
+          <a href="{{ article.url }}" class="article-card">
+            <div class="article-card__media">
+              {%- if article.image -%}
+                <img src="{{ article.image | image_url: width: 600 }}" alt="{{ article.title | escape }}">
+              {%- endif -%}
+            </div>
+            <div class="article-card__body">
+              <h3>{{ article.title }}</h3>
+              <div class="article__meta">{{ article.published_at | date: '%d %B %Y' }}</div>
+              <p>{{ article.excerpt_or_content | strip_html | truncatewords: 22 }}</p>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <nav class="pagination">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}">←</a>{%- endif -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}<a href="{{ part.url }}">{{ part.title }}</a>{%- else -%}<span class="current">{{ part.title }}</span>{%- endif -%}
+          {%- endfor -%}
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}">→</a>{%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Blog"
+    }
+  ]
+}
+{% endschema %}

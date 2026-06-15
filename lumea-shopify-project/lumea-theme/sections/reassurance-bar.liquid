@@ -1,0 +1,45 @@
+<section class="section section--tight reassurance-bar">
+  <div class="container">
+    <div class="reassurance-bar__grid">{% for block in section.blocks %}<div class="reassurance-item" {{ block.shopify_attributes }}><div class="reassurance-item__icon">{{ block.settings.icon }}</div><div class="reassurance-item__text">{{ block.settings.text }}</div></div>{% endfor %}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Barre de réassurance",
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Élément",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône",
+          "default": "🌿"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "100% naturel"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre de réassurance",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "🍃", "text": "Sans sucres ajoutés" } },
+        { "type": "item", "settings": { "icon": "🌿", "text": "100% naturel" } },
+        { "type": "item", "settings": { "icon": "🌾", "text": "Sans gluten" } },
+        { "type": "item", "settings": { "icon": "🥛", "text": "Sans lactose" } },
+        { "type": "item", "settings": { "icon": "🐰", "text": "Non testé sur les animaux" } },
+        { "type": "item", "settings": { "icon": "🇫🇷", "text": "Fabriqué en France" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+<header class="header">
+  <div class="header__inner">
+    <button class="header__burger" data-burger aria-expanded="false" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="/" class="header__logo">
+      {% if settings.logo != blank %}
+        {{ settings.logo | image_url: width: settings.logo_width | image_tag: width: settings.logo_width, alt: shop.name, loading: 'eager' }}
+      {% else %}
+        LUMÉA
+      {% endif %}
+    </a>
+
+    <nav class="header__nav">
+      <ul>
+        {% for link in linklists[section.settings.menu].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a href="{{ routes.search_url }}" class="header__icon">Rechercher</a>
+      <a href="{{ routes.cart_url }}" class="header__icon">Panier <span class="header__cart-count">{{ cart.item_count }}</span></a>
+    </div>
+  </div>
+
+  <nav class="mobile-menu" data-mobile-menu>
+    {% for link in linklists[section.settings.menu].links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "En-tête"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,84 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="faq">
+      {% for block in section.blocks %}
+        <div class="faq-item" {{ block.shopify_attributes }}>
+          <button class="faq-item__q" data-faq-toggle aria-expanded="false">{{ block.settings.question }}<span class="faq-item__icon">+</span></button>
+          <div class="faq-item__a"><p>{{ block.settings.answer }}</p></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Questions fréquentes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Qu'est-ce que le collagène ?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Réponse",
+          "default": "Le collagène est une protéine essentielle à la peau, aux cheveux et aux articulations."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "qa",
+          "settings": {
+            "question": "Quels sont les bienfaits du collagène ?",
+            "answer": "Notre collagène marin contribue à l'éclat de la peau, à la santé des cheveux et au confort des articulations, intégré simplement dans ton rituel quotidien."
+          }
+        },
+        {
+          "type": "qa",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "Tes commandes sont expédiées sous 24 à 48h et livrées en 2 à 4 jours ouvrés en France métropolitaine."
+          }
+        },
+        {
+          "type": "qa",
+          "settings": {
+            "question": "Comment conserver mes produits LUMÉA ?",
+            "answer": "Conserve tes produits dans un endroit sec et à l'abri de la lumière. Referme bien l'emballage après chaque utilisation."
+          }
+        },
+        {
+          "type": "qa",
+          "settings": {
+            "question": "Quel est le dosage recommandé ?",
+            "answer": "Une dose par jour suffit. Mélange-la dans 200ml d'eau chaude ou de lait pour profiter pleinement de ton rituel."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

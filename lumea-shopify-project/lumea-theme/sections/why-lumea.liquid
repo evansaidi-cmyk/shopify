@@ -1,0 +1,87 @@
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="cols-3">
+      {% for block in section.blocks %}
+        <div class="feature" {{ block.shopify_attributes }}>
+          <div class="feature__icon">{{ block.settings.icon }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pourquoi LUMÉA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Pourquoi LUMÉA ?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Atout",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône (emoji)",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Ingrédients premium"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texte",
+          "default": "Collagène marin et superaliments soigneusement sélectionnés."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pourquoi LUMÉA",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "✨",
+            "title": "Ingrédients premium",
+            "text": "Collagène marin et superaliments soigneusement sélectionnés."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "⏱️",
+            "title": "Praticité",
+            "text": "Un rituel prêt en moins d'une minute, où que tu sois."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "☕",
+            "title": "Goût authentique",
+            "text": "Un café et un matcha qui n'ont rien à envier aux baristas."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

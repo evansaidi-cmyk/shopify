@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": { "type": "main-product" },
+    "reassurance-bar": { "type": "reassurance-bar" },
+    "how-to-ritual": { "type": "how-to-ritual" },
+    "composition-nutrition": { "type": "composition-nutrition" },
+    "reviews": { "type": "reviews" }
+  },
+  "order": [
+    "main",
+    "reassurance-bar",
+    "how-to-ritual",
+    "composition-nutrition",
+    "reviews"
+  ]
+}

@@ -1,0 +1,106 @@
+<section class="section">
+  <div class="container">
+    <div class="spotlight__grid">
+      {% for block in section.blocks %}
+        <div class="spotlight-card" {{ block.shopify_attributes }}>
+          {% if block.settings.image %}
+            {{ block.settings.image | image_url: width: 900 | image_tag: class: 'spotlight-card__img' }}
+          {% else %}
+            <img class="spotlight-card__img" src="{{ block.settings.image_url }}" alt="">
+          {% endif %}
+          <div class="spotlight-card__overlay"></div>
+          <div class="spotlight-card__body">
+            <h3>{{ block.settings.title }}</h3>
+            <div class="spotlight-card__price">{{ block.settings.price }}</div>
+            {% if block.settings.button_label != blank %}
+              <a class="btn btn--light" href="{{ block.settings.button_link }}">{{ block.settings.button_label }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mise en avant",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "spotlight",
+      "name": "Carte",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "URL de l'image",
+          "default": "https://images.unsplash.com/photo-1572286258217-215cf8e667c1?w=1200&q=80"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Café Collagène"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Prix",
+          "default": "À partir de 29€"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Texte du bouton",
+          "default": "Découvrir"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Lien du bouton"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mise en avant",
+      "blocks": [
+        {
+          "type": "spotlight",
+          "settings": {
+            "title": "Café Collagène",
+            "price": "À partir de 29€",
+            "button_label": "Découvrir",
+            "image_url": "https://images.unsplash.com/photo-1572286258217-215cf8e667c1?w=1200&q=80"
+          }
+        },
+        {
+          "type": "spotlight",
+          "settings": {
+            "title": "Matcha Collagène",
+            "price": "À partir de 32€",
+            "button_label": "Découvrir",
+            "image_url": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=1200&q=80"
+          }
+        },
+        {
+          "type": "spotlight",
+          "settings": {
+            "title": "Coffret Découverte",
+            "price": "À partir de 45€",
+            "button_label": "Découvrir",
+            "image_url": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&q=80"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
